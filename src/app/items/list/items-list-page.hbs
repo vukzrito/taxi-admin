@@ -1,0 +1,266 @@
+---
+layout: app/app-layout
+pagename: items-list
+items:
+  - title: Joas Ngwenya
+    img: https://s3.amazonaws.com/uifaces/faces/twitter/brad_frost/128.jpg
+    sales: 46323
+    author: 2018 Toyota Corolla
+    category: Sedan
+    date: 21 JUL 2018
+  - title: Angel Nibe
+    img: https://s3.amazonaws.com/uifaces/faces/twitter/_everaldo/128.jpg
+    sales: 4567
+    author: 2015 Hyundai Elantra 1.6
+    category: Sedan
+    date: 21 SEP 2018
+  - title: Petrou Nick
+    img: https://s3.amazonaws.com/uifaces/faces/twitter/eduardo_olv/128.jpg
+    sales: 854
+    author:  2016 Nissan NP 200
+    category: Van
+    date: 17 AUG 2018
+  - title:  Thulani Khumalo
+    img: https://s3.amazonaws.com/uifaces/faces/twitter/why_this/128.jpg
+    sales: 1861
+    author: 2017 Toyota Corolla Ex
+    category: Sedan
+    date: 15 AUG 2018
+  - title: Lovemore Khoza
+    img: https://s3.amazonaws.com/uifaces/faces/twitter/w7download/128.jpg
+    sales: 7891
+    author: 2016 Hyundai H100
+    category: Truck
+    date: 10 AUG 2018
+  - title: Masana Tshabalala
+    img: https://s3.amazonaws.com/uifaces/faces/twitter/pankogut/128.jpg
+    sales: 95150
+    author: 2018 VW Polo GP
+    category: Other
+    date: 10 AUG 2018
+---
+<div class="title-search-block">
+
+	<div class="title-block">
+		<div class="row">
+
+			{{!-- Title --}}
+			<div class="col-md-6">
+				<h3 class="title">
+					Drivers
+					{{!-- <a href="#" class="btn btn-primary btn-sm rounded-s">
+						Add New
+					</a><!--
+				 --><div class="action dropdown">
+						<button class="btn  btn-sm rounded-s btn-secondary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							More actions...
+						</button>
+						<div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+							<a class="dropdown-item" href="#"><i class="fa fa-pencil-square-o icon"></i>Mark as a draft</a>
+							<a class="dropdown-item" href="#" data-toggle="modal" data-target="#confirm-modal"><i class="fa fa-close icon"></i>Delete</a>
+						</div>
+					</div> --}}
+				</h3>
+				<p class="title-description">
+					
+				</p>
+			</div>
+
+		</div>
+	</div>
+
+
+	<div class="items-search">
+		<form class="form-inline">
+			<div class="input-group">
+				<input type="text" class="form-control boxed rounded-s" placeholder="Search for...">
+				<span class="input-group-btn">
+					<button class="btn btn-secondary rounded-s" type="button">
+						<i class="fa fa-search"></i>
+					</button>
+				</span>
+			</div>
+		</form>
+	</div>
+</div>
+
+<div class="card items">
+	<ul class="item-list striped">
+		<li class="item item-list-header">
+			<div class="item-row">
+				<div class="item-col fixed item-col-check">
+					<label class="item-check" id="select-all-items">
+						<input type="checkbox" class="checkbox">
+						<span></span>
+					</label>
+				</div>
+				<div class="item-col item-col-header fixed item-col-img md">
+					<div>
+						<span></span>
+					</div>
+				</div>
+				<div class="item-col item-col-header item-col-title">
+					<div>
+						<span>Name</span>
+					</div>
+				</div>
+				<div class="item-col item-col-header item-col-sales">
+					<div>
+						<span>Trips</span>
+					</div>
+				</div>
+				<div class="item-col item-col-header item-col-stats">
+					<div class="no-overflow">
+						<span>Stats</span>
+					</div>
+				</div>
+				<div class="item-col item-col-header item-col-category">
+					<div class="no-overflow">
+						<span>Vehicle type</span>
+					</div>
+				</div>
+				<div class="item-col item-col-header item-col-author">
+					<div class="no-overflow">
+						<span>Vehicle</span>
+					</div>
+				</div>
+				<div class="item-col item-col-header item-col-date">
+					<div>
+						<span>Date joined</span>
+					</div>
+				</div>
+				<div class="item-col item-col-header fixed item-col-actions-dropdown">
+
+				</div>
+			</div>
+		</li>
+		{{#each items}}
+			<li class="item">
+
+				<div class="item-row">
+
+					<div class="item-col fixed item-col-check">
+
+						<label class="item-check" id="select-all-items">
+							<input type="checkbox" class="checkbox">
+							<span></span>
+						</label>
+					</div>
+
+					<div class="item-col fixed item-col-img md">
+						<a href="##">
+							<div class="item-img rounded" style="background-image: url({{this.img}})"></div>
+						</a>
+					</div>
+					<div class="item-col fixed pull-left item-col-title">
+						<div class="item-heading">Name</div>
+						<div>
+							<a href="#" class="">
+								<h4 class="item-title">
+									{{this.title}}
+								</h4>
+							</a>
+						</div>
+					</div>
+					<div class="item-col item-col-sales">
+						<div class="item-heading">Trips</div>
+						<div>
+							{{this.sales}}
+						</div>
+					</div>
+					<div class="item-col item-col-stats no-overflow">
+						<div class="item-heading">Stats</div>
+						<div class="no-overflow">
+							<div class="item-stats sparkline" data-type="bar"></div>
+						</div>
+					</div>
+					<div class="item-col item-col-category no-overflow">
+						<div class="item-heading">Category</div>
+						<div class="no-overflow">
+							<a href="#">{{this.category}}</a>
+						</div>
+					</div>
+					<div class="item-col item-col-author">
+						<div class="item-heading">Vehicle</div>
+						<div class="no-overflow">
+							<a href="#">{{this.author}}</a>
+						</div>
+					</div>
+					<div class="item-col item-col-date">
+						<div class="item-heading">Date joined</div>
+						<div class="no-overflow">
+							{{this.date}}
+						</div>
+					</div>
+					<div class="item-col fixed item-col-actions-dropdown">
+						<div class="item-actions-dropdown">
+							<a class="item-actions-toggle-btn">
+								<span class="inactive">
+									<i class="fa fa-cog"></i>
+								</span>
+								<span class="active">
+								<i class="fa fa-chevron-circle-right"></i>
+								</span>
+							</a>
+							<div class="item-actions-block">
+                                <ul class="item-actions-list">
+                                    <li>
+                                        <a class="remove" href="#" data-toggle="modal" data-target="#confirm-modal">
+                                            <i class="fa fa-trash-o "></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="edit" href="#">
+                                            <i class="fa fa-pencil"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+						</div>
+					</div>
+
+				</div>
+			</li>
+		{{/each}}
+	</ul>
+</div>
+
+<nav class="text-right">
+	<ul class="pagination">
+		<li class="page-item">
+			<a class="page-link" href="#">
+				Prev
+			</a>
+		</li>
+		<li class="page-item active">
+			<a class="page-link" href="#">
+				1
+			</a>
+		</li>
+		<li class="page-item">
+			<a class="page-link" href="#">
+				2
+			</a>
+		</li>
+		<li class="page-item">
+			<a class="page-link" href="#">
+				3
+			</a>
+		</li>
+		<li class="page-item">
+			<a class="page-link" href="#">
+				4
+			</a>
+		</li>
+		<li class="page-item">
+			<a class="page-link" href="#">
+				5
+			</a>
+		</li>
+		<li class="page-item">
+			<a class="page-link" href="#">
+				Next
+			</a>
+		</li>
+	</ul>
+</nav>
